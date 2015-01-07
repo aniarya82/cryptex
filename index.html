@@ -7,6 +7,14 @@
 </head>
 
 <style type="text/css">
+body{
+	background-color: black;
+	color: white;
+	font-family: verdana;
+}
+.jumbotron {
+	color: black;
+}
 .orange {
 	background-color: rgb(206,92,67);
 }
@@ -23,13 +31,17 @@
 	background-color: rgb(228,221,68);
 }
 .black {
-	background-color: black;
+	/*background-color: black;*/
+	background-color: yellow;
 }
 .white {
 	background-color: white;
 }
 .brown {
 	background-color: #996633;
+}
+.blank {
+	background-color: rgb(144,144,144);
 }
 .circle {
 	height: 20px;
@@ -51,12 +63,12 @@
 .circle2 {
 	height: 11px;
 	border-radius: 100%;
-	background-color: blue;
+	background-color: rgb(144,144,144);
 	width: 11px;
 }
 #main {
 	border: 1px solid #000;
-	background: #FFFF66;
+	background: black;
 }
 .margin {
 	margin-top: 20px;
@@ -69,18 +81,40 @@
 .col-md-6{
 	margin-right: -8px;
 }
-.navbar-collapse {
+/*.navbar-collapse {
 	margin-left: 50px;
-	margin: 1px solid #000;
+	border: 1px solid rgb(0,40,0);
+}*/
+.navbar-inverse {
+	background-color: black;
 }
 .navbar-collapse li{
+	/*margin-left: 50px;
+	margin-right: 50px;
+	margin-top: 50px;*/
 	margin: 50px;
 	padding: 0px;
-	font-size: 1.25em;
+	font-size: 1.45em;
 }
 .navbar-collapse li:hover {
 	background-color: green;
+	color: black!important;
+}
+.navbar-collapse a{
 	color: white!important;
+}
+#rules {
+	display: none;
+}
+#contact {
+	display: none;
+}
+#about {
+	display: none;
+}
+.well {
+	background-color: black;
+	color: white;
 }
 </style>
 
@@ -93,12 +127,12 @@ $(document).ready(function(){
 
 	$(".circle").click(function() {
 		$(this).addClass(color);
-		$(this).removeClass("black");
+		$(this).removeClass("blank");
 	});
 
 	$("#orange").click(function(){
 		color = "orange";
-		alert("color is: "+color);
+		// alert("color is: "+color);
 	});
 	$("#light-green").click(function(){
 		color = "light-green";
@@ -117,6 +151,38 @@ $(document).ready(function(){
 	});
 	$("#brown").click(function(){
 		color = "brown";
+	});
+	$("#yellow").click(function(){
+		color = "yellow";
+	});
+	// $("li").click(function() {
+	// 	alert("li tag clicked!!");
+	// 	$(".active").removeClass = "active";
+	// 	$(this).addClass = "active";
+	// });
+	$(".home").click(function(){
+		$("#home").css("display","block");
+		$("#about").css("display","none");
+		$("#rules").css("display","none");
+		$("#contact").css("display","none");
+	});
+	$(".about").click(function(){
+		$("#home").css("display","none");
+		$("#about").css("display","block");
+		$("#rules").css("display","none");
+		$("#contact").css("display","none");
+	});
+	$(".rules").click(function(){
+		$("#home").css("display","none");
+		$("#about").css("display","none");
+		$("#rules").css("display","block");
+		$("#contact").css("display","none");
+	});
+	$(".contact").click(function(){
+		$("#home").css("display","none");
+		$("#about").css("display","none");
+		$("#rules").css("display","none");
+		$("#contact").css("display","block");
 	});
 });
 
@@ -148,15 +214,19 @@ $(document).ready(function(){
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="#" class="navbar-brand">Brand</a>
+				<a href="#" class="navbar-brand"><img src="images/cryplogo.png" alt="brand" height="135px" width="135px"></a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="nav">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">HOME</a></li>
-					<li><a href="#">ABOUT</a></li>
-					<li><a href="#">RULES</a></li>
-					<li><a href="#">CONTACT</a></li>
+					<li class="home"><a href="#">HOME</a></li>
+					<li class="about"><a href="#">ABOUT</a></li>
+					<li class="rules"><a href="#">RULES</a></li>
+					<li class="contact"><a href="#">CONTACT</a></li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<a href="ktj.in" target="_blank"><img src="images/ktjlogo.png" alt="ktjlogo" height="120px" width="310px"></a>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
@@ -169,147 +239,182 @@ $(document).ready(function(){
 		<li>CONTACT</li>
 	</div> -->
 
-	<div class="col-md-4" id="history">
-		jjsfdhuhaudfghdsb  dsghfa hdgfu dhsjhfg hjsf udh vaudshgfu sh gahfs v gughu sfhgj fhg ufh ufhas gfh
-	</div>
+	<div class="row" id="home">
 
-	<div class="col-md-4" id="main">
-		<div class="container-fluid">
-			<div class="row margin">
-				<div class="col-md-2"><div class="circle black" id="circle1"></div></div>
-				<div class="col-md-2"><div class="circle black" id="circle2"></div></div>
-				<div class="col-md-2"><div class="circle black" id="circle3"></div></div>
-				<div class="col-md-2"><div class="circle black" id="circle4"></div></div>
-				<div class="col-md-2">
-					<div class="row margin2">
-						<div class="col-md-6"><div class="circle2"></div></div>
-						<div class="col-md-6"><div class="circle2"></div></div>
-					</div>
-					<div class="row margin2">
-						<div class="col-md-6"><div class="circle2"></div></div>
-						<div class="col-md-6"><div class="circle2"></div></div>
-					</div>
-				</div>
-				<div class="col-md-2"><p><button type="button" class="btn btn-info" id="button1">Submit</button></p></div>
+		<div class="col-md-4" id="history">
+			<div class="well">
+				jjsfdhuhaudfghdsb  dsghfa hdgfu dhsjhfg hjsf udh vaudshgfu sh gahfs v gughu sfhgj fhg ufh ufhas gfh
 			</div>
+		</div>
 
-			<div class="row margin">
-				<div class="col-md-2"><div class="circle black" id="circle5"></div></div>
-				<div class="col-md-2"><div class="circle black" id="circle6"></div></div>
-				<div class="col-md-2"><div class="circle black" id="circle7"></div></div>
-				<div class="col-md-2"><div class="circle black" id="circle8"></div></div>
-				<div class="col-md-2">
-					<div class="row margin2">
-						<div class="col-md-6"><div class="circle2"></div></div>
-						<div class="col-md-6"><div class="circle2"></div></div>
-					</div>
-					<div class="row margin2">
-						<div class="col-md-6"><div class="circle2"></div></div>
-						<div class="col-md-6"><div class="circle2"></div></div>
-					</div>
+		<div class="col-md-4" id="main">
+			<div class="container-fluid">
+				<div class="row margin">
+					<div class="col-md-2"><div class="circle blank" id="circle-ques"></div></div>
+					<div class="col-md-2"><div class="circle blank" id="circle-ques"></div></div>
+					<div class="col-md-2"><div class="circle blank" id="circle-ques"></div></div>
+					<div class="col-md-2"><div class="circle blank" id="circle-ques"></div></div>
 				</div>
-				<div class="col-md-2"><button type="button" class="btn btn-info" id="button2">Submit</button></div>
-			</div>
 
-			<div class="row margin">
-				<div class="col-md-2"><div class="circle black" id="circle9"></div></div>
-				<div class="col-md-2"><div class="circle black" id="circle10"></div></div>
-				<div class="col-md-2"><div class="circle black" id="circle11"></div></div>
-				<div class="col-md-2"><div class="circle black" id="circle12"></div></div>
-				<div class="col-md-2">
-					<div class="row margin2">
-						<div class="col-md-6"><div class="circle2"></div></div>
-						<div class="col-md-6"><div class="circle2"></div></div>
+				<div class="row margin">
+					<div class="col-md-2"><div class="circle blank" id="circle1"></div></div>
+					<div class="col-md-2"><div class="circle blank" id="circle2"></div></div>
+					<div class="col-md-2"><div class="circle blank" id="circle3"></div></div>
+					<div class="col-md-2"><div class="circle blank" id="circle4"></div></div>
+					<div class="col-md-2">
+						<div class="row margin2">
+							<div class="col-md-6"><div class="circle2"></div></div>
+							<div class="col-md-6"><div class="circle2"></div></div>
+						</div>
+						<div class="row margin2">
+							<div class="col-md-6"><div class="circle2"></div></div>
+							<div class="col-md-6"><div class="circle2"></div></div>
+						</div>
 					</div>
-					<div class="row margin2">
-						<div class="col-md-6"><div class="circle2"></div></div>
-						<div class="col-md-6"><div class="circle2"></div></div>
-					</div>
+					<div class="col-md-2"><p><button type="button" class="btn btn-info" id="button1">Submit</button></p></div>
 				</div>
-				<div class="col-md-2"><button type="button" class="btn btn-info">Submit</button></div>
-			</div>
 
-			<div class="row margin">
-				<div class="col-md-2"><div class="circle black" id="circle13"></div></div>
-				<div class="col-md-2"><div class="circle black" id="circle14"></div></div>
-				<div class="col-md-2"><div class="circle black" id="circle15"></div></div>
-				<div class="col-md-2"><div class="circle black" id="circle16"></div></div>
-				<div class="col-md-2">
-					<div class="row margin2">
-						<div class="col-md-6"><div class="circle2"></div></div>
-						<div class="col-md-6"><div class="circle2"></div></div>
+				<div class="row margin">
+					<div class="col-md-2"><div class="circle blank" id="circle5"></div></div>
+					<div class="col-md-2"><div class="circle blank" id="circle6"></div></div>
+					<div class="col-md-2"><div class="circle blank" id="circle7"></div></div>
+					<div class="col-md-2"><div class="circle blank" id="circle8"></div></div>
+					<div class="col-md-2">
+						<div class="row margin2">
+							<div class="col-md-6"><div class="circle2"></div></div>
+							<div class="col-md-6"><div class="circle2"></div></div>
+						</div>
+						<div class="row margin2">
+							<div class="col-md-6"><div class="circle2"></div></div>
+							<div class="col-md-6"><div class="circle2"></div></div>
+						</div>
 					</div>
-					<div class="row margin2">
-						<div class="col-md-6"><div class="circle2"></div></div>
-						<div class="col-md-6"><div class="circle2"></div></div>
-					</div>
+					<div class="col-md-2"><button type="button" class="btn btn-info" id="button2">Submit</button></div>
 				</div>
-				<div class="col-md-2"><button type="button" class="btn btn-info">Submit</button></div>
-			</div>
 
-			<div class="row margin">
-				<div class="col-md-2"><div class="circle black" id="circle17"></div></div>
-				<div class="col-md-2"><div class="circle black" id="circle18"></div></div>
-				<div class="col-md-2"><div class="circle black" id="circle19"></div></div>
-				<div class="col-md-2"><div class="circle black" id="circle20"></div></div>
-				<div class="col-md-2">
-					<div class="row margin2">
-						<div class="col-md-6"><div class="circle2"></div></div>
-						<div class="col-md-6"><div class="circle2"></div></div>
+				<div class="row margin">
+					<div class="col-md-2"><div class="circle blank" id="circle9"></div></div>
+					<div class="col-md-2"><div class="circle blank" id="circle10"></div></div>
+					<div class="col-md-2"><div class="circle blank" id="circle11"></div></div>
+					<div class="col-md-2"><div class="circle blank" id="circle12"></div></div>
+					<div class="col-md-2">
+						<div class="row margin2">
+							<div class="col-md-6"><div class="circle2"></div></div>
+							<div class="col-md-6"><div class="circle2"></div></div>
+						</div>
+						<div class="row margin2">
+							<div class="col-md-6"><div class="circle2"></div></div>
+							<div class="col-md-6"><div class="circle2"></div></div>
+						</div>
 					</div>
-					<div class="row margin2">
-						<div class="col-md-6"><div class="circle2"></div></div>
-						<div class="col-md-6"><div class="circle2"></div></div>
-					</div>
+					<div class="col-md-2"><button type="button" class="btn btn-info">Submit</button></div>
 				</div>
-				<div class="col-md-2"><button type="button" class="btn btn-info">Submit</button></div>
-			</div>
 
-			<div class="row margin">
-				<div class="col-md-2"><div class="circle black" id="circle21"></div></div>
-				<div class="col-md-2"><div class="circle black" id="circle22"></div></div>
-				<div class="col-md-2"><div class="circle black" id="circle23"></div></div>
-				<div class="col-md-2"><div class="circle black" id="circle24"></div></div>
-				<div class="col-md-2">
-					<div class="row margin2">
-						<div class="col-md-6"><div class="circle2"></div></div>
-						<div class="col-md-6"><div class="circle2"></div></div>
+				<div class="row margin">
+					<div class="col-md-2"><div class="circle blank" id="circle13"></div></div>
+					<div class="col-md-2"><div class="circle blank" id="circle14"></div></div>
+					<div class="col-md-2"><div class="circle blank" id="circle15"></div></div>
+					<div class="col-md-2"><div class="circle blank" id="circle16"></div></div>
+					<div class="col-md-2">
+						<div class="row margin2">
+							<div class="col-md-6"><div class="circle2"></div></div>
+							<div class="col-md-6"><div class="circle2"></div></div>
+						</div>
+						<div class="row margin2">
+							<div class="col-md-6"><div class="circle2"></div></div>
+							<div class="col-md-6"><div class="circle2"></div></div>
+						</div>
 					</div>
-					<div class="row margin2">
-						<div class="col-md-6"><div class="circle2"></div></div>
-						<div class="col-md-6"><div class="circle2"></div></div>
+					<div class="col-md-2"><button type="button" class="btn btn-info">Submit</button></div>
+				</div>
+
+				<div class="row margin">
+					<div class="col-md-2"><div class="circle blank" id="circle17"></div></div>
+					<div class="col-md-2"><div class="circle blank" id="circle18"></div></div>
+					<div class="col-md-2"><div class="circle blank" id="circle19"></div></div>
+					<div class="col-md-2"><div class="circle blank" id="circle20"></div></div>
+					<div class="col-md-2">
+						<div class="row margin2">
+							<div class="col-md-6"><div class="circle2"></div></div>
+							<div class="col-md-6"><div class="circle2"></div></div>
+						</div>
+						<div class="row margin2">
+							<div class="col-md-6"><div class="circle2"></div></div>
+							<div class="col-md-6"><div class="circle2"></div></div>
+						</div>
 					</div>
+					<div class="col-md-2"><button type="button" class="btn btn-info">Submit</button></div>
 				</div>
-				<div class="col-md-2"><button type="button" class="btn btn-info">Submit</button></div>
-			</div>
 
-			<div class="row margin">
-				<div class="col-md-2"><div class="circleR orange" id="orange"></div></div>
-				<div class="col-md-2"><div class="circleR sky-blue" id="sky-blue"></div></div>
-				<div class="col-md-2"><div class="circleR black" id="black"></div></div>
-				<div class="col-md-2"><div class="circleR light-green" id="light-green"></div></div>
-				<div class="col-md-2">
+				<div class="row margin">
+					<div class="col-md-2"><div class="circle blank" id="circle21"></div></div>
+					<div class="col-md-2"><div class="circle blank" id="circle22"></div></div>
+					<div class="col-md-2"><div class="circle blank" id="circle23"></div></div>
+					<div class="col-md-2"><div class="circle blank" id="circle24"></div></div>
+					<div class="col-md-2">
+						<div class="row margin2">
+							<div class="col-md-6"><div class="circle2"></div></div>
+							<div class="col-md-6"><div class="circle2"></div></div>
+						</div>
+						<div class="row margin2">
+							<div class="col-md-6"><div class="circle2"></div></div>
+							<div class="col-md-6"><div class="circle2"></div></div>
+						</div>
+					</div>
+					<div class="col-md-2"><button type="button" class="btn btn-info">Submit</button></div>
 				</div>
-				<div class="col-md-2"></div>
-			</div>
 
-			<div class="row margin">
-				<div class="col-md-2"><div class="circleR purple" id="purple"></div></div>
-				<div class="col-md-2"><div class="circleR yellow" id="yellow"></div></div>
-				<div class="col-md-2"><div class="circleR white" id="white"></div></div>
-				<div class="col-md-2"><div class="circleR brown" id="brown"></div></div>
-				<div class="col-md-2">
+				<div class="row margin">
+					<div class="col-md-2"><div class="circleR orange" id="orange"></div></div>
+					<div class="col-md-2"><div class="circleR sky-blue" id="sky-blue"></div></div>
+					<div class="col-md-2"><div class="circleR black" id="black"></div></div>
+					<div class="col-md-2"><div class="circleR light-green" id="light-green"></div></div>
+					<div class="col-md-2">
+					</div>
+					<div class="col-md-2"></div>
 				</div>
-				<div class="col-md-2"></div>
+
+				<div class="row margin">
+					<div class="col-md-2"><div class="circleR purple" id="purple"></div></div>
+					<div class="col-md-2"><div class="circleR yellow" id="yellow"></div></div>
+					<div class="col-md-2"><div class="circleR white" id="white"></div></div>
+					<div class="col-md-2"><div class="circleR brown" id="brown"></div></div>
+					<div class="col-md-2">
+					</div>
+					<div class="col-md-2"></div>
+				</div>
+
 			</div>
 
 		</div>
 
-	</div>
+		<div class="col-md-4" id="sidebar">
+			<div class="well">
+				jjsfdhuhaudfghdsb  dsghfa hdgfu dhsjhfg hjsf udh vaudshgfu sh gahfs v gughu sfhgj fhg ufh ufhas gfh
+			</div>
+		</div>
+	</div><!-- #HOME ENDS-->
 
-	<div class="col-md-4" id="sidebar">
-		jjsfdhuhaudfghdsb  dsghfa hdgfu dhsjhfg hjsf udh vaudshgfu sh gahfs v gughu sfhgj fhg ufh ufhas gfh
-	</div>
+	<div class="container" id="about">
+		<div class="row jumbotron">
+			<h3 align="center">ABOUT</h3>
+			<p>Nel corso della storia, l'arte ha inspirato, placato e instigato molti all'azione. Il ventesimo secolo non Ã¨ d'eccezione. Pertanto, questo bollettino vuol riesaminare i personaggi letterari, artistici e cinematografici che hanno modellato la cultura dell'America latina con la loro espressione. Frida Kahlo (1907-1954) Ã¨ una delle piÃ¹ famose artiste femminili messicane. Il suo desiderio, perÃ², non Ã¨ sempre stato quello di diventare un'artista. Solamente, all'etÃ  di diciotto anni, dopo un serio incidente stradale, cominciÃ² ad imparare a dipingere. Ora, viene riconosciuta nel mondo internazionale per i ritratti di se stessa con una festa di colori brillanti. Uno dei piÃ¹ validi sostenitori di Kahlo era suo marito, Diego Rivera (1886-1957), un rinomato artista i cui murali di contenuto drammatico hanno fatto rivivere l'affresco in America latina. I suoi murali sono diventati famosi per l'uso multicolore ma, contrariamente ai ritratti personali di sua moglie, il suo lavoro si concentra sui temi storici del Messico. Il cileno Pablo Neruda (1904-1973) Ã¨ considerato uno dei piÃ¹ grandi poeti romantici. Il suo vero nome era NeftalÃ­ Ricardo Reyes Basoalto, ma scriveva e pubblicava con lo pseudonimo di Pablo Neruda; molti speculano che lo facesse per evitare le critiche di suo padre, il quale gli vietava di scrivere. Nel 1971 gli fu assegnato il premio Nobel per la letteratura. Un'altra poetessa cilena, Gabriela Mistral (1889-1957) fu la prima donna dell'America latina a vincere il premio Nobel per la letteratura, consegnatole nel 1945. Anche se le poesie di Mistral riflettono la sua passione per i diritti umani, ciÃ² non era l'unico metodo di espressione nel suo servizio alla comunitÃ . InvestÃ¬, infatti, l'incarico di educatrice, ministro culturale e diplomatico in vari paesi europei. Il cileno Pablo Neruda (1904-1973) Ã¨ considerato uno dei piÃ¹ grandi poeti romantici. Il suo vero nome era NeftalÃ­ Ricardo Reyes Basoalto, ma scriveva e pubblicava con lo pseudonimo di Pablo Neruda; molti speculano che lo facesse per evitare le critiche di suo padre, il quale gli vietava di scrivere. Nel 1971 gli fu assegnato il premio Nobel per la letteratura. Un'altra poetessa cilena, Gabriela Mistral (1889-1957) fu la prima donna dell'America latina a vincere il premio Nobel per la letteratura, consegnatole nel 1945.</p>
+		</div>
+	</div><!-- #ABOUT ENDS-->
+
+	<div class="container" id="rules">
+		<div class="row jumbotron">
+			<h3 align="center">RULES</h3>
+			<p>Nel corso della storia, l'arte ha inspirato, placato e instigato molti all'azione. Il ventesimo secolo non Ã¨ d'eccezione. Pertanto, questo bollettino vuol riesaminare i personaggi letterari, artistici e cinematografici che hanno modellato la cultura dell'America latina con la loro espressione. Frida Kahlo (1907-1954) Ã¨ una delle piÃ¹ famose artiste femminili messicane. Il suo desiderio, perÃ², non Ã¨ sempre stato quello di diventare un'artista. Solamente, all'etÃ  di diciotto anni, dopo un serio incidente stradale, cominciÃ² ad imparare a dipingere. Ora, viene riconosciuta nel mondo internazionale per i ritratti di se stessa con una festa di colori brillanti. Uno dei piÃ¹ validi sostenitori di Kahlo era suo marito, Diego Rivera (1886-1957), un rinomato artista i cui murali di contenuto drammatico hanno fatto rivivere l'affresco in America latina. I suoi murali sono diventati famosi per l'uso multicolore ma, contrariamente ai ritratti personali di sua moglie, il suo lavoro si concentra sui temi storici del Messico. Il cileno Pablo Neruda (1904-1973) Ã¨ considerato uno dei piÃ¹ grandi poeti romantici. Il suo vero nome era NeftalÃ­ Ricardo Reyes Basoalto, ma scriveva e pubblicava con lo pseudonimo di Pablo Neruda; molti speculano che lo facesse per evitare le critiche di suo padre, il quale gli vietava di scrivere. Nel 1971 gli fu assegnato il premio Nobel per la letteratura. Un'altra poetessa cilena, Gabriela Mistral (1889-1957) fu la prima donna dell'America latina a vincere il premio Nobel per la letteratura, consegnatole nel 1945. Anche se le poesie di Mistral riflettono la sua passione per i diritti umani, ciÃ² non era l'unico metodo di espressione nel suo servizio alla comunitÃ . InvestÃ¬, infatti, l'incarico di educatrice, ministro culturale e diplomatico in vari paesi europei. Il cileno Pablo Neruda (1904-1973) Ã¨ considerato uno dei piÃ¹ grandi poeti romantici. Il suo vero nome era NeftalÃ­ Ricardo Reyes Basoalto, ma scriveva e pubblicava con lo pseudonimo di Pablo Neruda; molti speculano che lo facesse per evitare le critiche di suo padre, il quale gli vietava di scrivere. Nel 1971 gli fu assegnato il premio Nobel per la letteratura. Un'altra poetessa cilena, Gabriela Mistral (1889-1957) fu la prima donna dell'America latina a vincere il premio Nobel per la letteratura, consegnatole nel 1945.</p>
+		</div>
+	</div><!-- #RULES ENDS-->
+
+	<div class="container" id="contact">
+		<div class="row jumbotron">
+			<h3 align="center">CONTACT</h3>
+			<p>Nel corso della storia, l'arte ha inspirato, placato e instigato molti all'azione. Il ventesimo secolo non Ã¨ d'eccezione. Pertanto, questo bollettino vuol riesaminare i personaggi letterari, artistici e cinematografici che hanno modellato la cultura dell'America latina con la loro espressione. Frida Kahlo (1907-1954) Ã¨ una delle piÃ¹ famose artiste femminili messicane. Il suo desiderio, perÃ², non Ã¨ sempre stato quello di diventare un'artista. Solamente, all'etÃ  di diciotto anni, dopo un serio incidente stradale, cominciÃ² ad imparare a dipingere. Ora, viene riconosciuta nel mondo internazionale per i ritratti di se stessa con una festa di colori brillanti. Uno dei piÃ¹ validi sostenitori di Kahlo era suo marito, Diego Rivera (1886-1957), un rinomato artista i cui murali di contenuto drammatico hanno fatto rivivere l'affresco in America latina. I suoi murali sono diventati famosi per l'uso multicolore ma, contrariamente ai ritratti personali di sua moglie, il suo lavoro si concentra sui temi storici del Messico. Il cileno Pablo Neruda (1904-1973) Ã¨ considerato uno dei piÃ¹ grandi poeti romantici. Il suo vero nome era NeftalÃ­ Ricardo Reyes Basoalto, ma scriveva e pubblicava con lo pseudonimo di Pablo Neruda; molti speculano che lo facesse per evitare le critiche di suo padre, il quale gli vietava di scrivere. Nel 1971 gli fu assegnato il premio Nobel per la letteratura. Un'altra poetessa cilena, Gabriela Mistral (1889-1957) fu la prima donna dell'America latina a vincere il premio Nobel per la letteratura, consegnatole nel 1945. Anche se le poesie di Mistral riflettono la sua passione per i diritti umani, ciÃ² non era l'unico metodo di espressione nel suo servizio alla comunitÃ . InvestÃ¬, infatti, l'incarico di educatrice, ministro culturale e diplomatico in vari paesi europei. Il cileno Pablo Neruda (1904-1973) Ã¨ considerato uno dei piÃ¹ grandi poeti romantici. Il suo vero nome era NeftalÃ­ Ricardo Reyes Basoalto, ma scriveva e pubblicava con lo pseudonimo di Pablo Neruda; molti speculano che lo facesse per evitare le critiche di suo padre, il quale gli vietava di scrivere. Nel 1971 gli fu assegnato il premio Nobel per la letteratura. Un'altra poetessa cilena, Gabriela Mistral (1889-1957) fu la prima donna dell'America latina a vincere il premio Nobel per la letteratura, consegnatole nel 1945.</p>
+		</div>
+	</div><!-- #CONTACT ENDS-->
 </body>
 
 
