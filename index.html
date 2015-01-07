@@ -3,6 +3,7 @@
 <head>
 	<title>Cryptex 2015 </title>
 	<link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 </head>
 
 <style type="text/css">
@@ -31,6 +32,14 @@
 	background-color: #996633;
 }
 .circle {
+	height: 20px;
+	border-radius: 100%;
+	/*background-color: rgb(104,104,104);*/
+	background-color: none;
+	width: 20px;
+	margin: auto;
+}
+.circleR {
 	height: 20px;
 	border-radius: 100%;
 	/*background-color: rgb(104,104,104);*/
@@ -75,6 +84,59 @@
 }
 </style>
 
+<script type="text/javascript">
+var color = "light-green";
+$(document).ready(function(){
+	$("button").click(function() {
+		alert("button clicked");
+	});
+
+	$(".circle").click(function() {
+		$(this).addClass(color);
+		$(this).removeClass("black");
+	});
+
+	$("#orange").click(function(){
+		color = "orange";
+		alert("color is: "+color);
+	});
+	$("#light-green").click(function(){
+		color = "light-green";
+	});
+	$("#black").click(function(){
+		color = "black";
+	});
+	$("#sky-blue").click(function(){
+		color = "sky-blue";
+	});
+	$("#purple").click(function(){
+		color = "purple";
+	});
+	$("#white").click(function(){
+		color = "white";
+	});
+	$("#brown").click(function(){
+		color = "brown";
+	});
+});
+
+// $("button").click(function () {
+// 	alert("button1 clicked");
+// });
+
+// $("#circle1").on("click",function () {
+// 	$("#circle1").addClass("orange");
+// 	$("#circle1").removeClass("black");
+// });
+
+// for (var i = 1; i <= 24; i++)	 {
+// 	$("#circlei").on("click",function () {
+// 		$("#circlei").addClass("orange");
+// 		$("#circlei").removeClass("black");
+// 	});
+// };
+</script>
+
 <body>
 
 	<nav class="navbar navbar-inverse">
@@ -114,10 +176,10 @@
 	<div class="col-md-4" id="main">
 		<div class="container-fluid">
 			<div class="row margin">
-				<div class="col-md-2"><div class="circle black"></div></div>
-				<div class="col-md-2"><div class="circle black"></div></div>
-				<div class="col-md-2"><div class="circle black"></div></div>
-				<div class="col-md-2"><div class="circle black"></div></div>
+				<div class="col-md-2"><div class="circle black" id="circle1"></div></div>
+				<div class="col-md-2"><div class="circle black" id="circle2"></div></div>
+				<div class="col-md-2"><div class="circle black" id="circle3"></div></div>
+				<div class="col-md-2"><div class="circle black" id="circle4"></div></div>
 				<div class="col-md-2">
 					<div class="row margin2">
 						<div class="col-md-6"><div class="circle2"></div></div>
@@ -128,14 +190,14 @@
 						<div class="col-md-6"><div class="circle2"></div></div>
 					</div>
 				</div>
-				<div class="col-md-2"><p><button type="button" class="btn btn-info">Submit</button></p></div>
+				<div class="col-md-2"><p><button type="button" class="btn btn-info" id="button1">Submit</button></p></div>
 			</div>
 
 			<div class="row margin">
-				<div class="col-md-2"><div class="circle black"></div></div>
-				<div class="col-md-2"><div class="circle black"></div></div>
-				<div class="col-md-2"><div class="circle black"></div></div>
-				<div class="col-md-2"><div class="circle black"></div></div>
+				<div class="col-md-2"><div class="circle black" id="circle5"></div></div>
+				<div class="col-md-2"><div class="circle black" id="circle6"></div></div>
+				<div class="col-md-2"><div class="circle black" id="circle7"></div></div>
+				<div class="col-md-2"><div class="circle black" id="circle8"></div></div>
 				<div class="col-md-2">
 					<div class="row margin2">
 						<div class="col-md-6"><div class="circle2"></div></div>
@@ -146,32 +208,14 @@
 						<div class="col-md-6"><div class="circle2"></div></div>
 					</div>
 				</div>
-				<div class="col-md-2"><button type="button" class="btn btn-info">Submit</button></div>
+				<div class="col-md-2"><button type="button" class="btn btn-info" id="button2">Submit</button></div>
 			</div>
 
 			<div class="row margin">
-				<div class="col-md-2"><div class="circle black"></div></div>
-				<div class="col-md-2"><div class="circle black"></div></div>
-				<div class="col-md-2"><div class="circle black"></div></div>
-				<div class="col-md-2"><div class="circle black"></div></div>
-				<div class="col-md-2">
-					<div class="row margin2">
-						<div class="col-md-6"><div class="circle2"></div></div>
-						<div class="col-md-6"><div class="circle2"></div></div>
-					</div>
-					<div class="row margin2">
-						<div class="col-md-6"><div class="circle2"></div></div>
-						<div class="col-md-6"><div class="circle2"></div></div>
-					</div>
-				</div>
-				<div class="col-md-2"><button type="button" class="btn btn-info">Submit</button></div>
-			</div>
-
-			<div class="row margin">
-				<div class="col-md-2"><div class="circle black"></div></div>
-				<div class="col-md-2"><div class="circle black"></div></div>
-				<div class="col-md-2"><div class="circle black"></div></div>
-				<div class="col-md-2"><div class="circle black"></div></div>
+				<div class="col-md-2"><div class="circle black" id="circle9"></div></div>
+				<div class="col-md-2"><div class="circle black" id="circle10"></div></div>
+				<div class="col-md-2"><div class="circle black" id="circle11"></div></div>
+				<div class="col-md-2"><div class="circle black" id="circle12"></div></div>
 				<div class="col-md-2">
 					<div class="row margin2">
 						<div class="col-md-6"><div class="circle2"></div></div>
@@ -186,10 +230,10 @@
 			</div>
 
 			<div class="row margin">
-				<div class="col-md-2"><div class="circle black"></div></div>
-				<div class="col-md-2"><div class="circle black"></div></div>
-				<div class="col-md-2"><div class="circle black"></div></div>
-				<div class="col-md-2"><div class="circle black"></div></div>
+				<div class="col-md-2"><div class="circle black" id="circle13"></div></div>
+				<div class="col-md-2"><div class="circle black" id="circle14"></div></div>
+				<div class="col-md-2"><div class="circle black" id="circle15"></div></div>
+				<div class="col-md-2"><div class="circle black" id="circle16"></div></div>
 				<div class="col-md-2">
 					<div class="row margin2">
 						<div class="col-md-6"><div class="circle2"></div></div>
@@ -204,10 +248,10 @@
 			</div>
 
 			<div class="row margin">
-				<div class="col-md-2"><div class="circle black"></div></div>
-				<div class="col-md-2"><div class="circle black"></div></div>
-				<div class="col-md-2"><div class="circle black"></div></div>
-				<div class="col-md-2"><div class="circle black"></div></div>
+				<div class="col-md-2"><div class="circle black" id="circle17"></div></div>
+				<div class="col-md-2"><div class="circle black" id="circle18"></div></div>
+				<div class="col-md-2"><div class="circle black" id="circle19"></div></div>
+				<div class="col-md-2"><div class="circle black" id="circle20"></div></div>
 				<div class="col-md-2">
 					<div class="row margin2">
 						<div class="col-md-6"><div class="circle2"></div></div>
@@ -222,20 +266,38 @@
 			</div>
 
 			<div class="row margin">
-				<div class="col-md-2"><div class="circle orange"></div></div>
-				<div class="col-md-2"><div class="circle sky-blue"></div></div>
-				<div class="col-md-2"><div class="circle black"></div></div>
-				<div class="col-md-2"><div class="circle light-green"></div></div>
+				<div class="col-md-2"><div class="circle black" id="circle21"></div></div>
+				<div class="col-md-2"><div class="circle black" id="circle22"></div></div>
+				<div class="col-md-2"><div class="circle black" id="circle23"></div></div>
+				<div class="col-md-2"><div class="circle black" id="circle24"></div></div>
+				<div class="col-md-2">
+					<div class="row margin2">
+						<div class="col-md-6"><div class="circle2"></div></div>
+						<div class="col-md-6"><div class="circle2"></div></div>
+					</div>
+					<div class="row margin2">
+						<div class="col-md-6"><div class="circle2"></div></div>
+						<div class="col-md-6"><div class="circle2"></div></div>
+					</div>
+				</div>
+				<div class="col-md-2"><button type="button" class="btn btn-info">Submit</button></div>
+			</div>
+
+			<div class="row margin">
+				<div class="col-md-2"><div class="circleR orange" id="orange"></div></div>
+				<div class="col-md-2"><div class="circleR sky-blue" id="sky-blue"></div></div>
+				<div class="col-md-2"><div class="circleR black" id="black"></div></div>
+				<div class="col-md-2"><div class="circleR light-green" id="light-green"></div></div>
 				<div class="col-md-2">
 				</div>
 				<div class="col-md-2"></div>
 			</div>
 
 			<div class="row margin">
-				<div class="col-md-2"><div class="circle purple"></div></div>
-				<div class="col-md-2"><div class="circle yellow"></div></div>
-				<div class="col-md-2"><div class="circle white"></div></div>
-				<div class="col-md-2"><div class="circle brown"></div></div>
+				<div class="col-md-2"><div class="circleR purple" id="purple"></div></div>
+				<div class="col-md-2"><div class="circleR yellow" id="yellow"></div></div>
+				<div class="col-md-2"><div class="circleR white" id="white"></div></div>
+				<div class="col-md-2"><div class="circleR brown" id="brown"></div></div>
 				<div class="col-md-2">
 				</div>
 				<div class="col-md-2"></div>
@@ -250,4 +312,6 @@
 	</div>
 </body>
 
+
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 </html>
